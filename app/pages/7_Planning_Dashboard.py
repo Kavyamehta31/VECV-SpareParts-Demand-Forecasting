@@ -32,58 +32,12 @@ abc_df = pd.read_csv(
 )
 
 # ------------------------------------
-# MERGE DATA
+# USE RECOMMENDATION DATASET
 # ------------------------------------
 
-planning_df = profile_df.merge(
+planning_df = recommendation_df.copy()
 
-    inventory_df[
-        [
-            "Warehouse",
-            "Part_No",
-            "Inventory_Risk",
-            "Safety_Stock",
-            "Reorder_Point",
-            "Inventory_Coverage"
-        ]
-    ],
-
-    on=["Warehouse", "Part_No"],
-    how="left"
-
-)
-
-planning_df = planning_df.merge(
-
-    recommendation_df[
-        [
-            "Warehouse",
-            "Part_No",
-            "Recommendation"
-        ]
-    ],
-
-    on=["Warehouse", "Part_No"],
-    how="left"
-
-)
-# Merge ABC Classification
-planning_df = planning_df.merge(
-
-    abc_df[
-        [
-            "Warehouse",
-            "Part_No",
-            "ABC_Class"
-        ]
-    ],
-
-    on=["Warehouse", "Part_No"],
-    how="left"
-
-)
-st.write(planning_df.shape)
-st.stop()
+planning_df["Inventory_Coverage"] = inventory_df["Inventory_Coverage"].values
 # ------------------------------------
 # FILTERS
 # ------------------------------------
