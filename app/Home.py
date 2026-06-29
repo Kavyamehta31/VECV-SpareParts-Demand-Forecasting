@@ -23,7 +23,7 @@ st.markdown("---")
 # ----------------------------------------------------
 
 profile_df = pd.read_csv(
-    "outputs/demand_profile.csv"
+    "outputs/final/demand_profile.csv"
 )
 
 inventory_df = pd.read_csv(
@@ -39,7 +39,7 @@ forecast_df = pd.read_csv(
 )
 
 abc_df = pd.read_csv(
-    "outputs/abc_analysis.csv"
+    "outputs/final/abc_analysis.csv"
 )
 # ----------------------------------------------------
 # EXECUTIVE KPIs
