@@ -1,6 +1,9 @@
 import pandas as pd
 
-# Load datasets
+# ---------------------------------------
+# LOAD DATA
+# ---------------------------------------
+
 inventory_df = pd.read_csv(
     "outputs/final/inventory_optimization.csv"
 )
@@ -9,7 +12,35 @@ abc_xyz_df = pd.read_csv(
     "outputs/abc_xyz_analysis.csv"
 )
 
-# Merge
+# ---------------------------------------
+# DEBUG INFORMATION
+# ---------------------------------------
+
+print("Inventory Shape:", inventory_df.shape)
+print("ABC XYZ Shape:", abc_xyz_df.shape)
+
+print(
+    "ABC XYZ Duplicate Warehouse+Part:",
+    abc_xyz_df.duplicated(
+        subset=["Warehouse", "Part_No"]
+    ).sum()
+)
+
+# ---------------------------------------
+# REMOVE DUPLICATES
+# ---------------------------------------
+
+abc_xyz_df = abc_xyz_df.drop_duplicates(
+    subset=["Warehouse", "Part_No"],
+    keep="first"
+)
+
+print("ABC XYZ Shape After Cleanup:", abc_xyz_df.shape)
+
+# ---------------------------------------
+# MERGE
+# ---------------------------------------
+
 df = inventory_df.merge(
     abc_xyz_df[
         [
@@ -26,7 +57,12 @@ df = inventory_df.merge(
     how="left"
 )
 
-# Recommendation Logic
+print("Merged Shape:", df.shape)
+
+# ---------------------------------------
+# RECOMMENDATION LOGIC
+# ---------------------------------------
+
 def generate_recommendation(row):
 
     if row["Demand_Class"] == "Dead Stock":
@@ -55,40 +91,26 @@ def generate_recommendation(row):
 
     return "Regular inventory review"
 
-# Apply
-df["Recommendation"] = (
-    df.apply(
-        generate_recommendation,
-        axis=1
-    )
+# ---------------------------------------
+# APPLY RECOMMENDATIONS
+# ---------------------------------------
+
+df["Recommendation"] = df.apply(
+    generate_recommendation,
+    axis=1
 )
 
-# Save
+# ---------------------------------------
+# SAVE
+# ---------------------------------------
+
 df.to_csv(
     "outputs/final/recommendations.csv",
     index=False
 )
 
 print("\nRecommendation Engine Completed")
+print("Final Shape:", df.shape)
 
 print("\nTop Recommendations")
-
-print(
-    df["Recommendation"]
-    .value_counts()
-)
-
-print("\nSample Output")
-
-print(
-    df[
-        [
-            "Part_No",
-            "ABC_Class",
-            "XYZ_Class",
-            "Inventory_Risk",
-            "Recommendation"
-        ]
-    ]
-    .head(10)
-)
+print(df["Recommendation"].value_counts())
