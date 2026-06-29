@@ -65,7 +65,19 @@ planning_df = planning_df.merge(
     how="left"
 
 )
+st.write("Profile Shape:", profile_df.shape)
+st.write("Inventory Shape:", inventory_df.shape)
+st.write("Recommendation Shape:", recommendation_df.shape)
+st.write("ABC Shape:", abc_df.shape)
 
+st.write("Planning Shape:", planning_df.shape)
+
+st.write("Profile Duplicate Parts:", profile_df["Part_No"].duplicated().sum())
+st.write("Inventory Duplicate Parts:", inventory_df["Part_No"].duplicated().sum())
+st.write("Recommendation Duplicate Parts:", recommendation_df["Part_No"].duplicated().sum())
+st.write("ABC Duplicate Parts:", abc_df["Part_No"].duplicated().sum())
+
+st.stop()
 # Merge ABC Classification
 planning_df = planning_df.merge(
 
