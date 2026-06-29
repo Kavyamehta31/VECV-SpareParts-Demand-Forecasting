@@ -83,6 +83,7 @@ planning_df = planning_df.merge(
 
 )
 st.write(planning_df.shape)
+st.stop()
 # ------------------------------------
 # FILTERS
 # ------------------------------------
