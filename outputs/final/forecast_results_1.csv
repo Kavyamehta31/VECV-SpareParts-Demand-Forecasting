@@ -1,0 +1,60 @@
+Part_No,Best_Model,Forecast_Month,Forecast_Value
+IA202651,Moving Average,1,674.33
+IA203036,ARIMA,1,1519.56
+IA203086,Moving Average,1,1090.0
+IA203416,Moving Average,1,1006.0
+IA208182,Moving Average,1,2126.33
+IA215142,Holt-Winters,1,1432.55
+IA215577,Holt Linear,1,1397.77
+IA215578,Moving Average,1,1000.33
+IA230267,Holt-Winters,1,896.86
+IA301086,Moving Average,1,0.0
+IA328687,Moving Average,1,533.33
+IA329978,Moving Average,1,1300.0
+IB001883,Holt Linear,1,1490.17
+IB002922,Moving Average,1,1960.67
+IB999501,Croston,1,1599.07
+IB999850,Moving Average,1,1815.33
+ID201024,Moving Average,1,1187.67
+ID202139,Simple Exponential Smoothing,1,994.44
+ID202167,Moving Average,1,1893.67
+ID205077,Croston,1,1491.35
+ID206974,Moving Average,1,861.67
+ID301958,Moving Average,1,988.0
+ID304913,Moving Average,1,1459.67
+ID309786,Holt-Winters,1,3979.48
+ID329244,Simple Exponential Smoothing,1,3927.51
+ID332218,Croston,1,2661.76
+ID332219,Croston,1,1825.22
+ID334315,Croston,1,3840.48
+ID364170,Moving Average,1,1066.33
+ID370657,Moving Average,1,2763.33
+ID376839,Holt-Winters,1,3965.9
+ID377754,Moving Average,1,2656.33
+ID378974,Moving Average,1,2717.67
+ID380825,Simple Exponential Smoothing,1,1258.67
+IE314595,Moving Average,1,3080.0
+IE321872,Simple Exponential Smoothing,1,3084.21
+IE332266,Moving Average,1,4971.0
+IF000466,Moving Average,1,1044.67
+IF000504,ARIMA,1,1649.9
+IM300205,Moving Average,1,6326.67
+MB293356,Holt Linear,1,1539.13
+MB344408,Moving Average,1,1333.33
+MB394519,Holt Linear,1,1372.12
+MB486038,ARIMA,1,2104.46
+ME013536,Moving Average,1,1888.0
+ME020244,Holt-Winters,1,1759.26
+ME074696,Moving Average,1,1365.33
+ME603242,Moving Average,1,1568.33
+MF140225,Croston,1,1987.28
+MF434103,Holt Linear,1,1777.75
+MF434104,Moving Average,1,2230.0
+MF434105,Holt Linear,1,1656.22
+MF445086,Moving Average,1,1998.33
+MF472103,Holt Linear,1,3550.95
+MF472127,Croston,1,2146.97
+MH001715,ARIMA,1,1494.21
+MS602013,Moving Average,1,1556.67
+MS660163,Holt-Winters,1,2042.09
+MS660164,Holt-Winters,1,2061.63

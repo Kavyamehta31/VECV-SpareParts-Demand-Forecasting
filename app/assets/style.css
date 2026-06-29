@@ -1,0 +1,25 @@
+/* Remove extra top padding */
+.block-container{
+    padding-top:2rem;
+    padding-bottom:2rem;
+}
+
+/* KPI cards */
+div[data-testid="metric-container"]{
+    background:#f8fafc;
+    border:1px solid #dbeafe;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Page titles */
+h1{
+    color:#1e3a8a;
+    font-weight:700;
+}
+
+/* Section headings */
+h2,h3{
+    color:#2563eb;
+}
